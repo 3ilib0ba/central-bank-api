@@ -19,8 +19,13 @@ public class CurrencyCentralBankApplication {
     }
 
     public static void main(String[] args) {
-        CurrencyCentralBankApplication system = new CurrencyCentralBankApplication(args);
-        system.run();
+        try {
+            CurrencyCentralBankApplication system = new CurrencyCentralBankApplication(args);
+            system.run();
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+            System.exit(-1);
+        }
     }
 
     private void run() {
